@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>The Basics &#8212; Olive Python 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/better.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="canonical" href="https://bd103.thedev.id/Olive-Python/basics.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Choose Your Path" href="choosepath.html" />
+    <link rel="prev" title="Quickstart" href="quickstart.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  </head><body>
+    <header id="pageheader"><h1><a href="index.html ">
+        Olive Python 1.0.0 documentation
+    </a></h1></header>
+  <div class="related top">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="quickstart.html" title="Previous document">Quickstart</a>
+        </li>
+        <li>
+          <a href="choosepath.html" title="Next document">Choose Your Path</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="index.html">Olive Python 1.0.0 documentation</a></li> 
+    </ul>
+  </nav>
+  </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="the-basics">
+<h1>The Basics<a class="headerlink" href="#the-basics" title="Permalink to this headline">#</a></h1>
+<p>In Python you can import code from another module (<code class="docutils literal notranslate"><span class="pre">.py</span></code> file).</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scripts</span> <span class="kn">import</span> <span class="n">shout</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">shout</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)</span>
+<span class="go">HELLO, WORLD!</span>
+</pre></div>
+</div>
+<p>This allows you to clean up your main file and organize your program. This method is called modularized code. There is also another way to modularize, which takes after the first method but expands it.</p>
+<p>Python packages. They allow you to <em>organize</em> your code even more through folders:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">project</span><span class="o">/</span>
+<span class="o">+</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span>
+<span class="o">+</span> <span class="n">package</span><span class="o">/</span>
+<span class="o">|</span> <span class="o">+</span> <span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
+<span class="o">|</span> <span class="o">+</span> <span class="n">submodule1</span><span class="o">.</span><span class="n">py</span>
+<span class="o">+</span> <span class="n">module1</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>This is an example of a program containing a package. All a package needs is a folder and a file called <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> inside. Try putting some code inside this file then importing the package.</p>
+<section id="the-quirkiness-of-init-py">
+<h2>The Quirkiness of <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code><a class="headerlink" href="#the-quirkiness-of-init-py" title="Permalink to this headline">#</a></h2>
+<p>When I first started making packages, <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> confused me. Let me try to explain how it works.</p>
+<p>We have a folder named <code class="docutils literal notranslate"><span class="pre">vehicles</span></code>. Inside we have three empty files:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">car.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bike.py</span></code></p></li>
+</ul>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">vehicles</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">vehicles</span><span class="p">)</span>
+<span class="go">&lt;class &#39;module&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">vehicles</span><span class="o">.</span><span class="n">car</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">AttributeError</span>: <span class="n">module &#39;vehicles&#39; has no attribute &#39;car&#39;</span>
+</pre></div>
+</div>
+<p>We learn two things from this example. First: Python does not separate packages and modules. They are of the same type. Second: modules inside of a package are not automatically imported when you import the package.</p>
+<p>What does this mean?</p>
+<blockquote>
+<div><p>When you import a package, you are really importing the <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file. Therefor, if you import in <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>, it will become global to the package.</p>
+</div></blockquote>
+<p>Let’s change the contents of <code class="docutils literal notranslate"><span class="pre">car.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># car.py</span>
+
+<span class="k">class</span> <span class="nc">Car</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+</pre></div>
+</div>
+<p>Now let’s run some tests:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">vehicles</span> <span class="kn">import</span> <span class="n">car</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">car</span><span class="o">.</span><span class="n">Car</span><span class="p">(</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="go">&lt;class &#39;vehicles.car.Car&#39;&gt;</span>
+</pre></div>
+</div>
+<p>Now notice if we run another test.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">vehicles</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">vehicles</span><span class="o">.</span><span class="n">car</span><span class="o">.</span><span class="n">Car</span><span class="p">(</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">AttributeError</span>: <span class="n">module &#39;vehicles&#39; has no attribute &#39;car&#39;</span>
+</pre></div>
+</div>
+<p>What do we learn here? You can import modules directly from a package, but it still doesn’t automatically import them.</p>
+<p>Now, let’s try this. Write the following to <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">.car</span> <span class="kn">import</span> <span class="n">Car</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">vehicles</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">vehicles</span><span class="o">.</span><span class="n">Car</span><span class="p">(</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="go">&lt;class &#39;vehicles.car.Car&#39;&gt;</span>
+</pre></div>
+</div>
+<p>It worked! In summary:</p>
+<ul class="simple">
+<li><p>When importing a package, you really are importing the <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file</p></li>
+<li><p>This file should import all the bits and bobs of other files with a relative import command (a dot before the name)</p></li>
+<li><p>Take <a class="reference external" href="https://github.com/pallets/flask/blob/main/src/flask/__init__.py">Flask’s</a> <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file. It imports many classes and functions from different modules, but only has one variable.</p></li>
+<li><p>If you don’t have enough functions to modularize, or don’t believe that it is necessary, read our pymodule page.</p></li>
+</ul>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Add pymodule page</p>
+</div>
+</section>
+<section id="learn-from-others">
+<h2>Learn from Others<a class="headerlink" href="#learn-from-others" title="Permalink to this headline">#</a></h2>
+<p>Sometimes an explanation is too vague or isn’t covered at all. If this is the case, there are many things to do:</p>
+<ul class="simple">
+<li><p>Search it up on the internet</p>
+<ul>
+<li><p><a class="reference external" href="https://google.com">Google</a> is extremely helpful and can solve your question most of the time</p></li>
+</ul>
+</li>
+<li><p>Ask the question in a coding-based forum</p>
+<ul>
+<li><p>I find that the <a class="reference external" href="https://replit.com/talk/all">Replit Talk</a> community can be very helpful</p></li>
+<li><p><a class="reference external" href="https://stackoverflow.com/">Stack Overflow</a> is also great</p></li>
+</ul>
+</li>
+<li><p>Open an issue on the <a class="reference external" href="https://github.com/BD103/Olive-Python/issues">Olive Python Github</a></p>
+<ul>
+<li><p>I will try to answer as quickly as possible, and I might add the solution to this guide as well!</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">The Basics</a><ul>
+<li><a class="reference internal" href="#the-quirkiness-of-init-py">The Quirkiness of <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code></a></li>
+<li><a class="reference internal" href="#learn-from-others">Learn from Others</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="quickstart.html"
+                        title="previous chapter">Quickstart</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="choosepath.html"
+                        title="next chapter">Choose Your Path</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/basics.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<form class="search" action="search.html" method="get">
+  <input type="text" name="q"
+   placeholder="type to search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="related bottom">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="quickstart.html" title="Previous document">Quickstart</a>
+        </li>
+        <li>
+          <a href="choosepath.html" title="Next document">Choose Your Path</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="index.html">Olive Python 1.0.0 documentation</a></li> 
+    </ul>
+  </nav>
+  </div>
+  <footer id="pagefooter">&copy; 2021, BD103.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a>
+      4.0.2
+        with the <a href="http://github.com/irskep/sphinx-better-theme">
+          better</a> theme.
+
+  </footer>
+
+  
+  </body>
+</html>

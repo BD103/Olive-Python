@@ -1,2 +1,2 @@
-run = ""
+run = "python -m http.server 8000 -d docs"
 language = "python3"

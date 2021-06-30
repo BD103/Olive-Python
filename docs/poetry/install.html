@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Installation &#8212; Olive Python 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/better.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="canonical" href="https://bd103.thedev.id/Olive-Python/poetry/install.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Creating a New Project" href="new-project.html" />
+    <link rel="prev" title="Poetry" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  </head><body>
+    <header id="pageheader"><h1><a href="../index.html ">
+        Olive Python 1.0.0 documentation
+    </a></h1></header>
+  <div class="related top">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="index.html" title="Previous document">Poetry</a>
+        </li>
+        <li>
+          <a href="new-project.html" title="Next document">Creating a New Project</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../index.html">Olive Python 1.0.0 documentation</a></li>
+      <li>
+        <a href="index.html">Poetry</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You don’t need to follow this page if your are using <a class="reference external" href="https://replit.com">Replit</a></p>
+</div>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">#</a></h2>
+<p>For the latest version (as of writing this), 1.1, you will need:</p>
+<ul class="simple">
+<li><p>Python 3.6 or greater (You technically can also use 2.7 or 3.5, but support is discontinued in the release of 1.2)</p></li>
+</ul>
+</section>
+<section id="install">
+<h2>Install<a class="headerlink" href="#install" title="Permalink to this headline">#</a></h2>
+<p>Now open up your console and run the following:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py <span class="p">|</span> python -
+</pre></div>
+</div>
+<p>If you are Windows, run this instead:</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">Invoke-WebRequest</span> <span class="n">-Uri</span> <span class="n">https</span><span class="p">://</span><span class="n">raw</span><span class="p">.</span><span class="n">githubusercontent</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">python-poetry</span><span class="p">/</span><span class="n">poetry</span><span class="p">/</span><span class="n">master</span><span class="p">/</span><span class="nb">get-poetry</span><span class="p">.</span><span class="n">py</span> <span class="n">-UseBasicParsing</span><span class="p">).</span><span class="n">Content</span> <span class="p">|</span> <span class="n">python</span> <span class="p">-</span>
+</pre></div>
+</div>
+<p>You should now have Poetry installed. Test your version with:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>poetry --version
+<span class="go">Poetry version 1.1.6</span>
+</pre></div>
+</div>
+</section>
+<section id="alternative-methods-not-recommended">
+<h2>Alternative Methods (Not Recommended)<a class="headerlink" href="#alternative-methods-not-recommended" title="Permalink to this headline">#</a></h2>
+<p>If you can’t use a request, try one of these instead.</p>
+<section id="method-1">
+<h3>Method 1<a class="headerlink" href="#method-1" title="Permalink to this headline">#</a></h3>
+<p>Download the <a class="reference external" href="https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py">get Poetry script</a> and then run it.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python get-poetry.py
+</pre></div>
+</div>
+</section>
+<section id="method-2">
+<h3>Method 2<a class="headerlink" href="#method-2" title="Permalink to this headline">#</a></h3>
+<p>Install it with PIP.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python -m pip install poetry
+</pre></div>
+</div>
+<p>This is undesireable because then all of Poetry’s dependencies are global. This may cause conflicts with your program. Poetry is meant to help you run environments, it doesn’t want to interfere.</p>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Installation</a><ul>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
+<li><a class="reference internal" href="#install">Install</a></li>
+<li><a class="reference internal" href="#alternative-methods-not-recommended">Alternative Methods (Not Recommended)</a><ul>
+<li><a class="reference internal" href="#method-1">Method 1</a></li>
+<li><a class="reference internal" href="#method-2">Method 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Poetry</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="new-project.html"
+                        title="next chapter">Creating a New Project</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/poetry/install.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<form class="search" action="../search.html" method="get">
+  <input type="text" name="q"
+   placeholder="type to search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="related bottom">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="index.html" title="Previous document">Poetry</a>
+        </li>
+        <li>
+          <a href="new-project.html" title="Next document">Creating a New Project</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../index.html">Olive Python 1.0.0 documentation</a></li>
+      <li>
+        <a href="index.html">Poetry</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>
+  <footer id="pagefooter">&copy; 2021, BD103.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a>
+      4.0.2
+        with the <a href="http://github.com/irskep/sphinx-better-theme">
+          better</a> theme.
+
+  </footer>
+
+  
+  </body>
+</html>

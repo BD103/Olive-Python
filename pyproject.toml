@@ -7,8 +7,11 @@ license = "Apache-2.0"
 
 [tool.poetry.dependencies]
 python = "^3.8"
+sphinx = "^4.0.2"
+sphinx-better-theme = "^0.1.5"
 
 [tool.poetry.dev-dependencies]
+
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

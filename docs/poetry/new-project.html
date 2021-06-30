@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Creating a New Project &#8212; Olive Python 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/better.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="canonical" href="https://bd103.thedev.id/Olive-Python/poetry/new-project.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Setuptools" href="../setuptools/index.html" />
+    <link rel="prev" title="Installation" href="install.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  </head><body>
+    <header id="pageheader"><h1><a href="../index.html ">
+        Olive Python 1.0.0 documentation
+    </a></h1></header>
+  <div class="related top">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="install.html" title="Previous document">Installation</a>
+        </li>
+        <li>
+          <a href="../setuptools/index.html" title="Next document">Setuptools</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../index.html">Olive Python 1.0.0 documentation</a></li>
+      <li>
+        <a href="index.html">Poetry</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="creating-a-new-project">
+<h1>Creating a New Project<a class="headerlink" href="#creating-a-new-project" title="Permalink to this headline">#</a></h1>
+<p>Time for you to start a new project. Open up the console in whatever program / folder you use and run the following:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>poetry init
+
+<span class="go">This command will guide you through creating your pyproject.toml config.</span>
+
+<span class="go">Package name [example]:</span>
+<span class="go">Version [0.1.0]:</span>
+<span class="go">Description []:</span>
+<span class="go">Author [None, n to skip]: Your Name &lt;email@email.com&gt;</span>
+<span class="go">License []: MIT (We&#39;ll get to this later!)</span>
+<span class="go">Compatible Python versions [^3.8]:</span>
+
+<span class="go">Would you like to define your main dependencies interactively? (yes/no) [yes] no</span>
+<span class="go">Would you like to define your development dependencies interactively? (yes/no) [yes] no</span>
+
+<span class="go">[some]</span>
+<span class="go">tomlcode = &quot;here&quot;</span>
+
+<span class="go">Do you confirm generation? (yes/no) [yes]</span>
+</pre></div>
+</div>
+<p>This should give you a nice <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file. This file contains all the configurable information about your project. Let’s take a look.</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[tool.poetry]</span>
+<span class="c1"># name of pypi id and usually package folder</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s">&quot;example&quot;</span>
+<span class="c1"># not much to say here except use semver</span>
+<span class="n">version</span> <span class="o">=</span> <span class="s">&quot;0.1.0&quot;</span>
+<span class="c1"># short text about your project</span>
+<span class="n">description</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+<span class="c1"># List of authors</span>
+<span class="n">authors</span> <span class="o">=</span> <span class="k">[&quot;Your Name &lt;email@email.com&gt;&quot;]</span>
+<span class="c1"># Choose a license from https://python-poetry.org/docs/pyproject/#license</span>
+<span class="n">license</span> <span class="o">=</span> <span class="s">&quot;MIT&quot;</span>
+
+<span class="c1"># installed when downloading the production package</span>
+<span class="k">[tool.poetry.dependencies]</span>
+<span class="n">python</span> <span class="o">=</span> <span class="s">&quot;^3.8&quot;</span>
+
+<span class="c1"># installed when running &quot;poetry install&quot;</span>
+<span class="k">[tool.poetry.dev-dependencies]</span>
+
+<span class="c1"># don&#39;t touch this section</span>
+<span class="k">[build-system]</span>
+<span class="n">requires</span> <span class="o">=</span> <span class="k">[&quot;poetry-core&gt;=1.0.0&quot;]</span>
+<span class="n">build-backend</span> <span class="o">=</span> <span class="s">&quot;poetry.core.masonry.api&quot;</span>
+</pre></div>
+</div>
+<p>There’s a lot to be said about this file. Thankfully, I’m going to stick to the <a class="reference external" href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a> philosophy and give you <a class="reference external" href="https://python-poetry.org/docs/pyproject/">a link to all the options</a> instead.</p>
+<p>Now run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>poetry lock
+<span class="go">Updating dependencies</span>
+<span class="go">Resolving dependencies... (0.1s)</span>
+
+<span class="go">Writing lock file</span>
+<span class="gp">$ </span>poetry install
+<span class="go">Installing dependencies from lock file</span>
+</pre></div>
+</div>
+<p>That’s enough commands for now. Let’s create some files:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">project</span><span class="o">/</span>
+<span class="o">+</span> <span class="n">example</span><span class="o">/</span>
+<span class="o">|</span> <span class="o">+</span> <span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
+<span class="o">+</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+<span class="o">+</span> <span class="n">pyproject</span><span class="o">.</span><span class="n">toml</span>
+<span class="o">+</span> <span class="n">poetry</span><span class="o">.</span><span class="n">lock</span>
+</pre></div>
+</div>
+<p>Move on to the next few sections to learn about dependency management and more.</p>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Make more clear and less abrupt</p>
+</div>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="install.html"
+                        title="previous chapter">Installation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../setuptools/index.html"
+                        title="next chapter">Setuptools</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/poetry/new-project.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<form class="search" action="../search.html" method="get">
+  <input type="text" name="q"
+   placeholder="type to search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="related bottom">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="install.html" title="Previous document">Installation</a>
+        </li>
+        <li>
+          <a href="../setuptools/index.html" title="Next document">Setuptools</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../index.html">Olive Python 1.0.0 documentation</a></li>
+      <li>
+        <a href="index.html">Poetry</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>
+  <footer id="pagefooter">&copy; 2021, BD103.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a>
+      4.0.2
+        with the <a href="http://github.com/irskep/sphinx-better-theme">
+          better</a> theme.
+
+  </footer>
+
+  
+  </body>
+</html>
